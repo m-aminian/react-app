@@ -56,3 +56,31 @@ Used by npm to manage the project's dependencies and scripts.
 Contains TypeScript compiler options.
 
 Configures how TypeScript should parse, check, and compile your code into JavaScript.
+
+4: How React Works
+When a React application starts, it builds a JavaScript data structure called the Virtual DOM. This is a lightweight, in-memory representation of the actual DOM — the HTML elements rendered in the browser.
+
+Each node in the Virtual DOM corresponds to a React component and its properties. When a component's state or props change, React updates the relevant part of the Virtual DOM to reflect the new state.
+
+React then performs a diffing algorithm, comparing the new Virtual DOM with the previous one to determine what exactly changed. This process allows React to efficiently identify the minimal number of updates needed.
+
+However, React doesn't directly manipulate the real DOM. Instead, a companion library called ReactDOM is responsible for applying these calculated updates to the browser's DOM.
+
+This approach improves performance by reducing direct DOM manipulations, which are relatively slow operations.
+
+5: React Ecosystem
+A library provides specific functionality that you can use in your application, while a framework offers a more opinionated and complete structure for building entire applications.
+
+React is a library focused solely on building user interfaces. It doesn't include solutions for routing, state management, or data fetching out of the box.
+
+Because of this, React relies on an ecosystem of complementary tools:
+
+React Router – for client-side routing
+
+Redux / Zustand / Recoil – for state management
+
+Axios / React Query / SWR – for data fetching and caching
+
+Next.js – a full-stack framework built on top of React that handles routing, SSR, API routes, and more
+
+This modularity gives developers flexibility to choose tools based on their needs — but also means more decisions upfront compared to opinionated frameworks like Angular.
