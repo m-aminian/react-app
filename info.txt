@@ -1,0 +1,58 @@
+1: What is React?
+
+React is a JavaScript library used for building dynamic and interactive user interfaces, particularly for single-page applications. It was developed by Facebook and released in 2013.
+
+When a web page is loaded in the browser, the browser parses the HTML and constructs a tree-like structure called the Document Object Model (DOM). JavaScript can manipulate this DOM to update the content in response to user actions.
+
+React introduces the concept of components, which are reusable, modular pieces of UI logic. Components help developers write organized and maintainable code by breaking the UI into smaller, independent parts.
+
+A React application is essentially a tree of components, with the App component typically serving as the root. This root component brings together all other components to build the complete user interface.
+
+2: create a react app
+There are two ways to create a react application
+1- Create React App (CRA)
+2- Vite ----> npm create vite@latest
+
+3: Folder Structure (React + TypeScript + Vite)
+
+Here's a brief overview of the key folders and files in a typical React application created with Vite:
+
+📁 node_modules
+Contains all third-party libraries and dependencies installed via npm or yarn.
+
+Automatically generated and should not be edited manually.
+
+📁 public
+Stores static assets like images, videos, and other files that don't need processing by the bundler.
+
+The contents are copied as-is to the final build.
+
+You can reference these files using a relative path like /logo.png.
+
+📁 src
+This is where your application source code lives.
+
+src/main.tsx
+Entry point of the application.
+
+Responsible for rendering the root component (usually <App />) into the HTML DOM.
+
+src/App.tsx
+The root React component of your app.
+
+Serves as the main container for all other components.
+
+📄 index.html (in the root or public/ depending on the tool)
+The HTML template used by Vite to inject your React app.
+
+Contains a <div id="root"></div> which acts as the mounting point for the entire React application.
+
+📄 package.json
+Defines metadata about your project (name, version, scripts, dependencies, etc.).
+
+Used by npm to manage the project's dependencies and scripts.
+
+📄 tsconfig.json
+Contains TypeScript compiler options.
+
+Configures how TypeScript should parse, check, and compile your code into JavaScript.
