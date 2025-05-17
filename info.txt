@@ -84,3 +84,6 @@ Axios / React Query / SWR – for data fetching and caching
 Next.js – a full-stack framework built on top of React that handles routing, SSR, API routes, and more
 
 This modularity gives developers flexibility to choose tools based on their needs — but also means more decisions upfront compared to opinionated frameworks like Angular.
+--------------------------------------------------------------------------------
+1: Create a list group component
+npm i bootstrap@5.2.3
