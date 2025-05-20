@@ -87,3 +87,7 @@ This modularity gives developers flexibility to choose tools based on their need
 --------------------------------------------------------------------------------
 1: Create a list group component
 npm i bootstrap@5.2.3
+---------------------------------------------------------------------------------
+7- paasing props
+we are currently showing a list of cities, what if we wanna show a list of names or list of colors. we don't wanna create a separate component for each time of list. props are the inputs to our components. 
+using an interface we can define the shape or an interface of an object.
