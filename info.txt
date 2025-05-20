@@ -91,3 +91,29 @@ npm i bootstrap@5.2.3
 7- paasing props
 we are currently showing a list of cities, what if we wanna show a list of names or list of colors. we don't wanna create a separate component for each time of list. props are the inputs to our components. 
 using an interface we can define the shape or an interface of an object.
+----------------------------------------------------------------------------------
+9- Props vs States
+Props (short for "properties") are the inputs passed to a component from its parent. They are read-only and are used to configure a component's behavior or display.
+
+State, on the other hand, represents data managed internally by the component. It can change over time — usually in response to user interactions, network requests, etc.
+
+🔁 Analogy
+Props are like function parameters — passed in and not meant to be modified.
+
+State is like local variables within a function — owned and managed by the component.
+
+🛠️ Key Differences
+| Feature         | Props                        | State                                |
+| --------------- | ---------------------------- | ------------------------------------ |
+| Source          | Passed from parent component | Managed within the component         |
+| Mutability      | Immutable (read-only)        | Mutable (via `useState`, `setState`) |
+| Purpose         | Configure a component        | Track local, changing data           |
+| Who controls it | Parent component             | The component itself                 |
+
+🚫 Anti-Pattern Warning
+React components should not mutate props. Example:
+function ListGroup({ heading }: { heading: string }) {
+  // ❌ Don't do this
+  // heading = "new title";
+}
+Even though JavaScript won't throw an error, mutating props breaks React's unidirectional data flow and leads to unpredictable behavior. Always treat props as immutable.
