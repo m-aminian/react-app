@@ -170,3 +170,40 @@ ListGroup.utils.ts → For helper logic
 What you’re doing makes component reuse much easier. You can even publish this as a package (npm, yarn workspaces, turborepo, etc.).
 
 If you use CSS Modules or CSS-in-JS (like styled-components, Tailwind, or Emotion), you can avoid name collisions and enhance encapsulation even more.
+---------------------------------------------------------------
+14- CSS modules
+n traditional (vanilla) CSS, all class names are global. This means if you define a class like .container in multiple files, you might accidentally override styles from one file with another — leading to naming collisions and unexpected styling issues.
+
+CSS Modules solve this problem by scoping CSS class names locally to the component.
+
+✅ What is a CSS Module?
+A CSS Module is just a .module.css file where the CSS classes you define are automatically transformed into unique class names at build time.
+
+This means you can safely use generic class names like .button, .title, or .container across multiple components without worrying about conflicts.
+
+🔄 How it Works (Behind the Scenes)
+When you use a CSS Module, tools like Vite, Webpack, or Next.js:
+
+Parse the .module.css file
+
+Rename your class names into unique identifiers (e.g., button_xyz12a)
+
+Let you import and use those names directly in your component like JavaScript variables
+
+⚙️ Vite & CSS Modules
+Vite supports CSS Modules out of the box. When it builds your project, it:
+
+Generates unique class names
+
+Includes the CSS in the final bundle
+
+Ensures each class only affects its corresponding component
+
+🧠 Summary
+Problem: Vanilla CSS has global scope → class name collisions.
+
+Solution: CSS Modules scope styles locally → avoids conflicts.
+
+How: Your bundler (e.g. Vite) generates unique class names.
+
+Usage: Import class names as JS objects and apply with className={styles.className}.
