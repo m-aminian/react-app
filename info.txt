@@ -207,3 +207,37 @@ Solution: CSS Modules scope styles locally → avoids conflicts.
 How: Your bundler (e.g. Vite) generates unique class names.
 
 Usage: Import class names as JS objects and apply with className={styles.className}.
+------------------------------------------------------------------------------------
+15- CSS in JS
+CSS-in-JS is a styling approach where CSS is written inside JavaScript or TypeScript files, typically alongside the component it styles. Instead of using separate .css files, styles are defined using JavaScript syntax and often bound directly to the component.
+
+This technique offers several benefits:
+
+✅ Benefits of CSS-in-JS
+Scoped Styles
+
+Styles are applied only to the component they belong to — no global clashes.
+
+Co-location of Code
+
+JS/TS logic and styles are in one file, improving cohesion and developer experience.
+
+Easier Deletion & Maintenance
+
+Deleting a component automatically removes its styles, reducing dead CSS.
+
+Dynamic Styling Based on Props or State
+
+Easily style elements conditionally based on component data or behavior.
+
+🧰 Popular CSS-in-JS Libraries
+styled-components
+
+emotion
+
+polished (a helper library often used with styled-components or emotion)
+
+📦 Installing styled-components
+
+npm i styled-components
+npm install @types/styled-components
