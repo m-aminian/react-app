@@ -117,3 +117,56 @@ function ListGroup({ heading }: { heading: string }) {
   // heading = "new title";
 }
 Even though JavaScript won't throw an error, mutating props breaks React's unidirectional data flow and leads to unpredictable behavior. Always treat props as immutable.
+-------------------------------------------------------------------------
+13- Vanilla CSS
+
+✅ Our Approach: Folder-Based Component Structure
+What we're doing:
+/ListGroup
+  ├── ListGroup.tsx
+  ├── ListGroup.css
+  └── index.ts
+This is called “co-located” or “modular component organization”, and it’s highly recommended for the following reasons:
+
+🔷 Benefits:
+High Cohesion: Everything related to the ListGroup is in one place — easy to find, understand, and reuse.
+
+Portability: You can copy-paste or move this folder to another project with almost no friction.
+
+Encapsulation: Makes the component more self-contained and focused.
+
+Scalability: As your app grows, this structure keeps complexity under control.
+
+❌ The Global css/ Folder Approach (Old School)
+Some teams put all styles in one src/css/ folder like this:
+/src
+  ├── /components
+  │     └── ListGroup.tsx
+  └── /css
+        └── list-group.css
+❌ Problems:
+Low cohesion: Related logic is spread across folders.
+
+Harder to refactor: Moving a component requires tracing its scattered dependencies.
+
+Reduces modularity: You can’t easily reuse the component without hunting for missing styles.
+
+🧠 Best Practices (Modern React / Frontend)
+✅ Structure each component like this:
+/components
+  └── /ListGroup
+       ├── ListGroup.tsx
+       ├── ListGroup.css (or .module.css or .scss)
+       └── index.ts
+You can even go further with:
+
+ListGroup.test.tsx → For tests
+
+ListGroup.types.ts → For type definitions if complex
+
+ListGroup.utils.ts → For helper logic
+
+📦 Bonus: When Reusing Across Projects
+What you’re doing makes component reuse much easier. You can even publish this as a package (npm, yarn workspaces, turborepo, etc.).
+
+If you use CSS Modules or CSS-in-JS (like styled-components, Tailwind, or Emotion), you can avoid name collisions and enhance encapsulation even more.
